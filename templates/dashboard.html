@@ -1,0 +1,7 @@
+{% extends 'header.html' %}
+{% block body %}
+		{% for item in menu %}
+			<li><a href="{{item[1]}}">{{item[0]}}</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "header.html" %}
+{% block body %}
+	<form method="post">
+		<input type="text" placeholder="uid" name="uid" value="{{request.form.uid}}">
+		<input class="btn btn-default" type="submit" value="Login">
+	</form>
+{% endblock %}

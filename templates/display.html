@@ -1,0 +1,63 @@
+{% extends "header.html" %}
+{% block body %}
+<ul>
+	{% for item in data[0] %}
+		<li>camera id {{item}} camera location {{(data[1])[item]}}</li>
+	{% endfor %}
+</ul>
+<a href="/dashboard/">dashboard</a>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<script type="text/javascript" src="/static/js/processing.js"></script>
+<script type="text/processing">
+	var x1=70, y1=60;
+	var x2=320, y2=60;
+	var x3=180, y3=220;
+	var x4=70,  y4=350;
+	var x5=330, y5=350;
+	var i;
+	i=x1;
+	void draw() {
+		textFont(f);
+		image(poster, 30, 30, 50, 50);
+		text("Camera 5",x1-20,y2+30);
+		text("Camera 8",x2-20,y2+30);
+		text("Camera 12",x3-20,y3+30);
+		text("Camera 19",x4-20,y4+30);
+		text("Camera 1",x5-20,y5+30);
+		image(poster, 300, 30, 50, 50);
+		image(poster, 170, 200, 50, 50);
+		image(poster, 30, 300, 50, 50);
+		image(poster, 300, 300, 50, 50);
+		point(i,y1);
+		if(i<=x2)
+		{
+			i++;
+		}
+	}
+    void setup() {
+	 f = createFont("Arial",13,true);
+    size(400,500);
+    background(0,0,0);
+    noSmooth();
+    stroke(204,102,0);
+    strokeWeight(1);
+
+	poster = loadImage('https://openclipart.org/download/282851/1499683972.svg');
+}
+    </script>
+    <canvas id="pjs"></canvas>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+{% endblock %}
